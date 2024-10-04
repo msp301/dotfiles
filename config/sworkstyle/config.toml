@@ -26,6 +26,7 @@ fallback = ''
 separator = ' '
 
 [matching]
+'1Password' = ''
 'discord' = ''
 'WebCord' = ''
 'Element' = ''
