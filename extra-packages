@@ -1,0 +1,13 @@
+bat
+cmake
+ctags
+curl
+fd-find
+fzf
+git
+golang
+make
+neovim
+ripgrep
+stow
+tmux
