@@ -3,6 +3,21 @@
 IMAGE=devbox
 CONTAINER=dev
 
+CheckDependency () {
+    if [ ! "$(which "$1" 2>/dev/null)" ]; then
+        echo "Error: missing '$1'"
+        ABORT=1
+    fi
+}
+
+CheckDependency "podman"
+CheckDependency "toolbox"
+
+if [ "$ABORT" ]; then
+    echo "Aborting"
+    exit 1
+fi
+
 CONTAINER_ID="$(podman ps -q --filter "name=$CONTAINER")"
 if [ ! -z "$CONTAINER" ]; then
     SUFFIX="$(tr -dc a-z0-9 </dev/urandom | head -c 8)"
