@@ -5,7 +5,13 @@ function fish_prompt
         set stat (set_color red) "[$last_status]" (set_color normal)
     end
 
-    string join '' -- (whoami)@(prompt_hostname) ' ' (set_color green) (prompt_pwd -D 2) (set_color normal) $stat '>'
+    set -l containerenv '/run/.containerenv'
+    set -l host prompt_hostname
+    if test -e $containerenv
+        set host (cat $containerenv | grep 'name=' | cut -d\" -f2)
+    end
+
+    string join '' -- (whoami)@$host ' ' (set_color green) (prompt_pwd -D 2) (set_color normal) $stat '>'
 end
 
 if status is-interactive
