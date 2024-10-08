@@ -3,6 +3,7 @@ cmake
 ctags
 curl
 fd-find
+fish
 fzf
 git
 golang
