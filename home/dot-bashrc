@@ -24,3 +24,13 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+# Drop straight into fish if available
+# Thanks Arch Linux for a reference: https://wiki.archlinux.org/title/Fish#Setting_fish_as_interactive_shell_only
+which fish >/dev/null 2>&1
+HAS_FISH="$?"
+if [[ "$HAS_FISH" = 0 && $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
+then
+	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+	exec fish $LOGIN_OPTION
+fi
+
