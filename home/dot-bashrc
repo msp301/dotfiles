@@ -24,30 +24,23 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-# Automatically enter toolbox container if it exists and we haven't already
-which toolbox >/dev/null 2>&1
-HAS_TOOLBOX="$?"
-if [[ "$HAS_TOOLBOX" = 0 && ! -e "/run/.toolboxenv" ]]; then
-    which podman >/dev/null 2>&1
-    HAS_PODMAN="$?"
-
-    if [ "$HAS_PODMAN" = 0 ]; then
-        podman container exists dev
-        HAS_CONTAINER="$?"
-
-        if [ "$HAS_CONTAINER" = 0 ]; then
-            toolbox enter dev
-        fi
+# In an interactive session
+if [ ! -z "$PS1" ]; then
+    # Automatically enter toolbox container if it exists and we haven't already
+    which toolbox >/dev/null 2>&1
+    HAS_TOOLBOX="$?"
+    if [[ "$HAS_TOOLBOX" = 0 && ! -e "/run/.toolboxenv" ]]; then
+        toolbox enter dev 2>/dev/null
     fi
-fi
 
-# Drop straight into fish if available
-# Thanks Arch Linux for a reference: https://wiki.archlinux.org/title/Fish#Setting_fish_as_interactive_shell_only
-which fish >/dev/null 2>&1
-HAS_FISH="$?"
-if [[ "$HAS_FISH" = 0 && $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
-then
-	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
-	exec fish $LOGIN_OPTION
+    # Drop straight into fish if available
+    # Thanks Arch Linux for a reference: https://wiki.archlinux.org/title/Fish#Setting_fish_as_interactive_shell_only
+    which fish >/dev/null 2>&1
+    HAS_FISH="$?"
+    if [[ "$HAS_FISH" = 0 && $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]
+    then
+        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+        exec fish $LOGIN_OPTION
+    fi
 fi
 
