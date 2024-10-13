@@ -20,7 +20,7 @@ function fish_prompt
         set stat (set_color red) "[$last_status]" (set_color normal)
     end
 
-    string join '' -- (prompt_is_toolbox) ' ' (whoami)@(prompt_host) ' ' (set_color green) (prompt_pwd -D 2) (set_color normal) $stat '>'
+    string join '' -- (prompt_is_toolbox) ' ' (whoami)@(prompt_host) ' ' (set_color green) (prompt_pwd -D 2) (set_color normal) (fish_vcs_prompt) $stat '>'
 end
 
 if status is-interactive
