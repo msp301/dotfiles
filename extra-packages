@@ -9,6 +9,7 @@ git
 golang
 make
 neovim
+prename
 ripgrep
 stow
 tmux
