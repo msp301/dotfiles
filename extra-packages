@@ -2,6 +2,7 @@ bat
 cmake
 ctags
 curl
+docker-compose
 fd-find
 fish
 fzf
@@ -9,6 +10,7 @@ git
 golang
 make
 neovim
+podman-remote
 prename
 ripgrep
 stow
