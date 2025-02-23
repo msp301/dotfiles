@@ -45,3 +45,4 @@ TIMESTAMP="$(date "+%Y%m%d%H%M%S")"
 $PODMAN build . -t "$IMAGE:latest" -t "$IMAGE:$TIMESTAMP"
 toolbox create -i "$IMAGE" "$CONTAINER"
 
+mkdir -p "$HOME/Sync"
