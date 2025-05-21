@@ -7,5 +7,7 @@ fi
 
 # User specific environment and startup programs
 
+export GOPATH="$PATH:$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
