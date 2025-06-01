@@ -6,6 +6,8 @@ curl
 docker-compose
 fd-find
 fish
+fuse
+fuse-libs
 fzf
 git
 git-filter-repo
