@@ -23,7 +23,6 @@
         "memory",
         "temperature",
         "backlight",
-        "sway/language",
         "battery",
         "clock",
         "tray"
