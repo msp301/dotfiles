@@ -3,30 +3,34 @@
  * Rofi version: 1.7.8+wayland1
  **/
 * {
-    red:                         rgba ( 220, 50, 47, 100 % );
+    selection:                   #283457;
+    red:                         #f7768e;
+    cyan:                        #7dcfff;
+    green:                       #9ece6a;
+    orange:                      #ff9e64;
     selected-active-foreground:  var(background);
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
+    lightfg:                     var(foreground);
     separatorcolor:              var(foreground);
     urgent-foreground:           var(red);
     alternate-urgent-background: var(lightbg);
-    lightbg:                     rgba ( 238, 232, 213, 100 % );
+    lightbg:                     #283457;
     background-color:            transparent;
-    border-color:                var(foreground);
+    border-color:                var(cyan);
     normal-background:           var(background);
     selected-urgent-background:  var(red);
     alternate-active-background: var(lightbg);
     spacing:                     2;
-    blue:                        rgba ( 38, 139, 210, 100 % );
+    blue:                        #7dcfff;
     alternate-normal-foreground: var(foreground);
     urgent-background:           var(background);
-    selected-normal-foreground:  var(lightbg);
+    selected-normal-foreground:  var(foreground);
     active-foreground:           var(blue);
-    background:                  rgba ( 253, 246, 227, 100 % );
+    background:                  #1a1b26;
     selected-active-background:  var(blue);
     active-background:           var(background);
-    selected-normal-background:  var(lightfg);
-    alternate-normal-background: var(lightbg);
-    foreground:                  rgba ( 0, 43, 54, 100 % );
+    selected-normal-background:  var(selection);
+    alternate-normal-background: var(background);
+    foreground:                  #c0caf5;
     selected-urgent-foreground:  var(background);
     normal-foreground:           var(foreground);
     alternate-urgent-foreground: var(red);
