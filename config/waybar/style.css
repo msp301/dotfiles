@@ -1,7 +1,7 @@
 @import "theme.css";
 
 * {
-    font-family: 'NotoSans Nerd Font Propo', 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-family: 'Berkeley Mono', 'NotoSans Nerd Font Propo', 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 13px;
 }
 
