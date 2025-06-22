@@ -5,6 +5,7 @@ ctags
 curl
 docker-compose
 fd-find
+ffmpeg-free
 fish
 fuse
 fuse-libs
