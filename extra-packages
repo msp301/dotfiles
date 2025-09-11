@@ -17,11 +17,11 @@ git-filter-repo
 gnuplot
 golang
 id3v2
+kid3-common
 make
-mp3
 neovim
 perl-JSON
-perl-URI
+perl-LWP-Protocol-https
 perl-libwww-perl
 podman-remote
 prename
