@@ -20,12 +20,15 @@ id3v2
 kid3-common
 make
 neovim
+perl-Capture-Tiny
+perl-File-MimeInfo
 perl-JSON
 perl-LWP-Protocol-https
 perl-libwww-perl
 podman-remote
 prename
 ripgrep
+rsgain
 sox
 stow
 tmux
