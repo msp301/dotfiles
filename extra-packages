@@ -1,4 +1,5 @@
 ansible
+ansible-collection-community-docker
 bat
 cmake
 ctags
