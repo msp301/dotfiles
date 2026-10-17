@@ -22,6 +22,7 @@ id3v2
 kid3-common
 make
 neovim
+opentofu
 perl-Capture-Tiny
 perl-File-MimeInfo
 perl-JSON
